@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import "../styles/main.css";
-import { REPLHistory } from "./REPLHistory";
 import { REPLInput } from "./REPLInput";
 
 /* 
@@ -12,20 +11,18 @@ import { REPLInput } from "./REPLInput";
   You don't need to do that for this gearup.
 */
 
-export default function REPL() {
-  // TODO: Add some kind of shared state that holds all the commands submitted.
-  // CHANGED
-  const [history, setHistory] = useState<string[]>([]);
+interface REPLProps {
+  setIsUnlocked: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function REPL(props: REPLProps) {
+  const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
+
+  // const [password, setPassword] = useState<string>("");
 
   return (
     <div className="repl">
-      {/*This is where your REPLHistory might go... You also may choose to add it within your REPLInput 
-      component or somewhere else depending on your component organization. What are the pros and cons of each? */}
-      {/* CHANGED */}
-      <REPLHistory history={history} />
-      <hr></hr>
-      {/* CHANGED */}
-      <REPLInput history={history} setHistory={setHistory} />
+      <REPLInput setIsUnlocked={props.setIsUnlocked} />
     </div>
   );
 }
