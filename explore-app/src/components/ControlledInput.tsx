@@ -23,7 +23,7 @@ export function ControlledInput({
       type="text"
       className="repl-command-box"
       value={value}
-      placeholder="Enter command here!"
+      placeholder="Entry"
       onChange={(ev) => setValue(ev.target.value)}
       aria-label={ariaLabel}
     ></input>

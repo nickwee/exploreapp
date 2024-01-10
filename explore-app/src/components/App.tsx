@@ -9,15 +9,19 @@ import { useState } from "react";
 function App() {
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
 
+  // BUG: Somehow App is rendering twice (Strict Mode?)
+  /**
+   * SOLUTION: ExploreApp needs to come from REPL and not be it's own separate thing.
+   * App should just call REPL and handleSubmit should flow into ExploreApp
+   */
   return (
     <div className="App">
       <p className="App-header">
-        <h1>Adventure is at your fingertips...</h1>
+        <h1>Explore.app</h1>
       </p>
       <div>
         {isUnlocked ? <ExploreApp /> : <REPL setIsUnlocked={setIsUnlocked} />}
       </div>
-      {/* <REPL /> */}
     </div>
   );
 }

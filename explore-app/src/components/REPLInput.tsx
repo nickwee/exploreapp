@@ -7,7 +7,6 @@ interface REPLInputProps {
   setIsUnlocked: Dispatch<SetStateAction<boolean>>;
 }
 // You can use a custom interface or explicit fields or both! An alternative to the current function header might be:
-// REPLInput(history: string[], setHistory: Dispatch<SetStateAction<string[]>>)
 export function REPLInput(props: REPLInputProps) {
   // Remember: let React manage state in your webapp.
 

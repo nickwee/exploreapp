@@ -22,6 +22,9 @@ export default function REPL(props: REPLProps) {
 
   return (
     <div className="repl">
+      <p className="App-header">
+        <h1>Adventure is at your fingertips...</h1>
+      </p>
       <REPLInput setIsUnlocked={props.setIsUnlocked} />
     </div>
   );
